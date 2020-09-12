@@ -10,35 +10,31 @@ import {
 export default class TodoItem extends React.Component {
     render() {
         return (
-            <View key={this.props.keyVal} style={styles.todo}>
-                <Text style={styles.todo__content}>{this.props.todoItem}</Text>
-                <TouchableOpacity style={styles.deleteNote}
+            <View key={this.props.keyVal} style={styles.todoItem}>
+                <Text style={styles.todoItem__content}>{this.props.todoItem}</Text>
+                <TouchableOpacity style={styles.todoItem__deleteButton}
                                   onPress= {this.props.deleteTodoItem}>
-                    <Text style={styles.deleteNoteText}>Delete</Text>
+                    <Text style={styles.todoItem__deleteText}>Delete</Text>
                 </TouchableOpacity>
             </View>
         );
     }
 }
 const styles = StyleSheet.create({
-    todo: {
+    todoItem: {
         position: 'relative',
         padding: 20,
         paddingRight: 100,
         borderBottomWidth:2,
         borderBottomColor: '#ededed'
     },
-    todo__content: {
+    todoItem__content: {
         color: '#651FFF',
         fontSize: 16,
         paddingLeft: 20,
-        marginLeft: 10,
     },
-    deleteNote: {
+    todoItem__deleteButton: {
         position: 'absolute',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#ed1218',
         height: 40,
         padding: 10,
@@ -47,7 +43,7 @@ const styles = StyleSheet.create({
         right: 10,
         borderRadius: 4
     },
-    deleteNoteText: {
+    todoItem__deleteText: {
         color: 'white',
         fontWeight: '800'
     }
